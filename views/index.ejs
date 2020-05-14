@@ -1,0 +1,53 @@
+<%- include ("./partials/header") %>
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark indigo">
+
+    <div class="container-fluid">
+
+        <!-- Navbar brand -->
+        <ion-icon name="code-slash-outline"></ion-icon>
+        <a class="navbar-brand ml-2" href="#">My Blog</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+
+            </ul>
+            <!-- Links -->
+
+        </div>
+        <!-- Collapsible content -->
+
+    </div>
+
+</nav>
+<!--/.Navbar-->
+<% blogs.forEach(function(blog){%>
+<div>
+    <h2> <%= blog.title %></h2>
+    <img src="<%=blog.image%>">
+    <span><%=blog.created%></span>
+    <p><%=blog.body%></p>
+</div>
+<%});%>
+
+<%- include ("./partials/footer") %>
