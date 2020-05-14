@@ -1,4 +1,5 @@
 <%- include ("./partials/header") %>
+
 <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark indigo">
 
@@ -35,13 +36,27 @@
 
 </nav>
 <!--/.Navbar-->
-<% blogs.forEach(function(blog){%>
-<div>
-    <h2> <%= blog.title %></h2>
-    <img src="<%=blog.image%>">
-    <span><%=blog.created%></span>
-    <p><%=blog.body%></p>
+
+<!-- Blog Form -->
+<div class="login-clean">
+    <form method="post" action="/blogs">
+        <h2 class="sr-only">Login Form</h2>
+        <div class="illustration d-inline-block"><i class="icon ion-ios-navigate"></i></div>
+        <div class="d-inline-block ml-4">
+            <h1>New Blog</h1>
+        </div>
+        <div class="form-group"><input class="form-control" type="text" name="blog[title]" placeholder="Title"></div>
+        <div class="form-group"><input class="form-control" type="text" name="blog[image]" placeholder="Image URL">
+        </div>
+        <div class="form-group"><textarea class="form-control" name="blog[body]" placeholder="Blog Post"
+                rows="5"></textarea></div>
+        <div class="mt-4">
+            <button class="btn btn-primary btn-block" type="submit">Submit</button>
+        </div>
+    </form>
 </div>
-<%});%>
+<!--/.Blog Form -->
+
+</main>
 
 <%- include ("./partials/footer") %>
