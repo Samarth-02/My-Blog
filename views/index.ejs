@@ -1,47 +1,89 @@
 <%- include ("./partials/header") %>
-<!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark indigo">
-
-    <div class="container-fluid">
-
-        <!-- Navbar brand -->
-        <ion-icon name="code-slash-outline"></ion-icon>
-        <a class="navbar-brand ml-2" href="#">My Blog</a>
-
-        <!-- Collapse button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-            aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Collapsible content -->
-        <div class="collapse navbar-collapse" id="basicExampleNav">
-
-            <!-- Links -->
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/blogs/new">New Post</a>
-                </li>
-            </ul>
-            <!-- Links -->
-
+<main class="page blog-post-list">
+    <section class="clean-block clean-blog-list dark">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info">Blogs List</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in,
+                    mattis vitae leo.</p>
+            </div>
+            <div class="block-content">
+                <% blogs.forEach(function(blog){%>
+                <div class="clean-blog-post">
+                    <div class="row">
+                        <div class="col-lg-5"><img class="rounded img-fluid" src="<%=blog.image%>">
+                        </div>
+                        <div class="col-lg-7">
+                            <h3><%= blog.title %></h3>
+                            <div class="info"><span class="text-muted"><%=blog.created.toDateString()%> by&nbsp;Samarth
+                                    Mehrotra</span></div>
+                            <p class="text-justify"><%=blog.body.substring(0,200)%>...</p><a
+                                href="/blogs/<%=blog._id%>"><button class="btn btn-outline-primary btn-sm"
+                                    type="button">Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+                <%});%>
+                <!-- <div class="clean-blog-post">
+                    <div class="row">
+                        <div class="col-lg-5"><img class="rounded img-fluid" src="/stylesheets/img/tech/image4.jpg">
+                        </div>
+                        <div class="col-lg-7">
+                            <h3>Lorem Ipsum dolor sit amet</h3>
+                            <div class="info"><span class="text-muted">Jan 16, 2018 by&nbsp;<a href="#">John
+                                        Smith</a></span></div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec
+                                auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc quam urna, dignissim nec auctor in, mattis
+                                vitae leo.</p><a href="show.html"><button class="btn btn-outline-primary btn-sm"
+                                    type="button">Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clean-blog-post">
+                    <div class="row">
+                        <div class="col-lg-5"><img class="rounded img-fluid" src="/stylesheets/img/tech/image4.jpg">
+                        </div>
+                        <div class="col-lg-7">
+                            <h3>Lorem Ipsum dolor sit amet</h3>
+                            <div class="info"><span class="text-muted">Jan 16, 2018 by&nbsp;<a href="#">John
+                                        Smith</a></span></div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec
+                                auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc quam urna, dignissim nec auctor in, mattis
+                                vitae leo.</p><a href="show.html"><button class="btn btn-outline-primary btn-sm"
+                                    type="button">Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clean-blog-post">
+                    <div class="row">
+                        <div class="col-lg-5"><img class="rounded img-fluid" src="/stylesheets/img/tech/image4.jpg">
+                        </div>
+                        <div class="col-lg-7">
+                            <h3>Lorem Ipsum dolor sit amet</h3>
+                            <div class="info"><span class="text-muted">Jan 16, 2018 by&nbsp;<a href="#">John
+                                        Smith</a></span></div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec
+                                auctor in, mattis vitae leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc quam urna, dignissim nec auctor in, mattis
+                                vitae leo.</p><a href="show.html"><button class="btn btn-outline-primary btn-sm"
+                                    type="button">Read More</button></a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
         </div>
-        <!-- Collapsible content -->
-
-    </div>
-
-</nav>
-<!--/.Navbar-->
-<% blogs.forEach(function(blog){%>
+    </section>
+</main>
+<!-- <% blogs.forEach(function(blog){%>
 <div>
     <h2> <%= blog.title %></h2>
     <img src="<%=blog.image%>">
     <span><%=blog.created%></span>
     <p><%=blog.body%></p>
+    <a href="/blogs/<%=blog._id%>">Read More</a>
 </div>
-<%});%>
+<%});%> -->
 
 <%- include ("./partials/footer") %>
