@@ -7,8 +7,9 @@ var bodyParser = require("body-parser"),
     app = express();
 
 // Configurations
+mongoose.connect(process.env.DATABASEURL);
 // mongoose.connect("mongodb://localhost/restful_blog_app");
-mongoose.connect("mongodb+srv://samarth:ping@blog-cluster-zxoxl.mongodb.net/test");
+// mongoose.connect("mongodb+srv://samarth:ping@blog-cluster-zxoxl.mongodb.net/test");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
