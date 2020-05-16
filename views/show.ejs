@@ -8,11 +8,12 @@
                 </div>
                 <div class="post-body">
                     <h3><%= blog.title %></h3>
-                    <div class="post-info"><span>By Samarth
-                            Mehrotra</span><span><%=blog.created.toDateString()%></span><span><a
-                                href="/blogs/<%=blog._id%>/edit"><i class="icon ion-edit"></i></a></span><span><a
-                                href="#"><i class="icon ion-android-delete" data-toggle="modal"
-                                    data-target="#exampleModalCenter"></i></a></span>
+                    <div class="post-info col-xs-12"><span class="mod">By Samarth
+                        </span><span class="mod"><%=blog.created.toDateString()%></span>
+                        <div class="d-inline-block"><span class="mod"><a href="/blogs/<%=blog._id%>/edit"><i
+                                        class="icon ion-edit"></i></a></span><span class="mod"><a href="#"><i
+                                        class="icon ion-android-delete" data-toggle="modal"
+                                        data-target="#exampleModalCenter"></i></a></span></div>
                     </div>
                     <p class="text-justify"><%=blog.body%></p>
                 </div>
